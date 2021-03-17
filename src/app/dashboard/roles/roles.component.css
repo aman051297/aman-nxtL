@@ -1,0 +1,434 @@
+.authority{
+	display: inline-block;
+}
+
+.main {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 13px !important;
+  margin-top: 15px;
+}
+
+.middle-section {
+  display: grid;
+  padding: 0px 30px;
+  margin-top: 15px;
+}
+
+.table-section {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #ccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 30px 15px 30px 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* TABLE */
+table {
+  width: 95%;
+  border-collapse: collapse;
+  border: 1px solid #dee2e6;
+  white-space: nowrap;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: auto;
+}
+
+table th {
+  padding: 13px 10px 12px 10px;
+  color: #fff;
+  text-align: left;
+  letter-spacing: 1px;
+  color: #3e4b5b !important;
+  font-size: 13px;
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+
+}
+
+table td {
+  padding: 8px 10px 8px 10px;
+  text-align: left;
+  font-size: 13px;
+}
+
+table tbody tr td:last-child a:not(:last-child) {
+  margin-right: 7px;
+}
+
+/* END */
+
+.new-code {
+  padding: 3px 13px 3px 13px;
+  background: #0094D1;
+  color: #fff;
+  border: 1px solid rgb(216, 215, 215);
+  border-radius: 18px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+.new-code:hover {
+  background: #252396;
+}
+
+.pull-right {
+  text-align: right;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 90px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: none;
+}
+
+/* Modal Content */
+.modal-content {
+  box-shadow: 0px 0px 40px #ccc;
+  background-color: #fff;
+  border: none;
+  margin-top: 150px;
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  border-radius: 10px;
+  animation: 1s ease-out 0s 1 animation;
+  animation-duration: 0.5s;
+  padding: 35px 22px;
+}
+
+@keyframes animation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* END */
+
+/* Deletion Modal */
+
+.wrapper {
+  padding: 0 5px;
+  border-radius: 15px;
+  color: #000;
+  background: transparent !important;
+}
+
+.wrapper p {
+  word-break: break-all;
+}
+
+.d-title {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 35px;
+  margin-top: 45px;
+  text-align: center;
+}
+
+.dt {
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  padding-top: 5px;
+}
+
+.btn-section {
+  text-align: center;
+}
+
+.save-btn,
+.cancel-btn {
+  background: linear-gradient(45deg, #f98686, #ff0000);
+  padding: 6px 25px;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 13px;
+  border: 2px solid white;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.cancel-btn {
+  background: linear-gradient(45deg, #e5dede, #bfbbbb);
+}
+
+.save-btn:hover,
+.cancel-btn:hover {
+  background: linear-gradient(45deg, transparent, transparent);
+  color: #000;
+  border: 2px solid #ff0000;
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(45deg, transparent, transparent);
+  color: #000;
+  border: 2px solid #bfbbbb;
+}
+
+@media screen and (max-width:580px) {
+  .save-btn {
+    padding: 9px 30px 7px 30px;
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 460px) {
+  .btn-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.modal-content {
+  padding: 5px 0 0 0;
+}
+
+tr:nth-child(even) {
+  background: #F7F9FA;
+}
+
+.no-records {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #dddddd;
+  margin-top: 28px;
+}
+
+@media screen and (max-width:900px) {
+  .modal-content {
+    width: 80%;
+  }
+}
+
+.rounded-del {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #db534e;
+  display: inline-block;
+  line-height: 37px;
+}
+
+.rounded {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #0094D1;
+  display: inline-block;
+  line-height: 37px;
+  padding-left: 2px;
+}
+
+.rounded,
+.rounded-del,
+.fa-trash {
+  font-size: 18px;
+  color: #f9f9f9;
+  margin-left: 11px;
+}
+
+.rounded-del:hover,
+.rounded-edit:hover,
+.rounded:hover {
+  background: #413fa4;
+  cursor: pointer;
+}
+
+/* Create Role and User CSS */
+.common-btn {
+  background: linear-gradient(45deg, #90c6db, #0094D1);
+  padding: 6px 25px;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 13px;
+  border: 2px solid white;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.common-btn:hover {
+  background: linear-gradient(45deg, transparent, transparent);
+  color: #000;
+  border: 2px solid #0094D1;
+}
+
+@media(max-width: 400px) {
+  .common-btn {
+    display: block;
+    margin: 10px auto !important;
+  }
+}
+
+/* The Modal (background) */
+/* Modal Content */
+.modal-content-form {
+  box-shadow: 0px 0px 40px #ccc;
+  background-color: #fff;
+  border: none;
+  margin-top: 150px;
+  margin: auto;
+  padding: 20px;
+  width: 30%;
+  border-radius: 10px;
+  animation: 1s ease-out 0s 1 animation;
+  animation-duration: 0.5s;
+  padding: 35px 22px;
+}
+
+
+input {
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 8px;
+  border-radius: 2px;
+  font-weight: normal;
+  font-size: 12px;
+  border: 1px solid #dee2e6;
+  outline: none;
+  margin-top: 7px;
+}
+
+select {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* The Close Button */
+.close {
+  color: lightgray;
+  font-size: 26px;
+  font-weight: bold;
+  position: absolute;
+  right: 460px;
+  top: 100px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#phone-input {
+  border-radius: 8px;
+  height: 54px;
+  margin-bottom: 20px;
+}
+
+.mb-12 {
+  border-radius: 8px;
+  height: 52px;
+  width: 100%;
+  box-shadow: 0px 0px 6px #ccc;
+}
+
+[data-tip] {
+  position: relative;
+}
+
+[data-tip]:before {
+  content: '';
+  /* hides the tooltip when not hovered */
+  display: none;
+  content: '';
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid #dc3545;
+  position: absolute;
+  top: 48px;
+  left: 25px;
+  z-index: 8;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+[data-tip]:after {
+  display: none;
+  content: attr(data-tip);
+  position: absolute;
+  top: 56px;
+  left: 10px;
+  padding: 5px 8px;
+  background: #dc3545;
+  color: #fff;
+  z-index: 9;
+  font-size: 14px;
+  height: 23px;
+  line-height: 11px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+[data-tip]:before,
+[data-tip]:after {
+  display: block;
+}
+
+textarea {
+  font-size: 12px;
+}
+
+.role {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.role a {
+  margin-right: 20px;
+  cursor: pointer;
+  color: #337ab7;
+}
+
+.role a:focus,
+.role a:hover {
+  text-decoration: underline !important;
+}
+
+.edit-icon {
+  font-size: 18px;
+  color: #f9f9f9;
+  margin-left: 11px;
+}
+
+.rounded-edit {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: cadetblue;
+  display: inline-block;
+  line-height: 37px;
+}
+
+.rolename {
+  font-size: 12px;
+  color: gray;
+}

@@ -1,0 +1,40 @@
+<section class="main">
+  <!-- header start -->
+  <div class="logo position-fixed">
+  </div>
+  <div class="row no-gutters header-top">
+    <div class="col-12 media-screen">
+      <nav class="header  position-fixed">
+                <img src="https://www.epicos.com/sites/default/files//styles/ogimage_thumb/public/efkon2.png?itok=SuB--f0d" class="logo-img" routerLink="/dashboard">
+        <div class="dropdown btn-dropdown">
+          <div class="user-name">Hey,&nbsp;{{userDetails?.name}}&nbsp;&nbsp;
+            <i class="fa fa-power-off" title="Logout" (click)="logout()" aria-hidden="true"></i>
+        </div>
+        </div>
+      </nav>
+         <div>
+      </div>
+    </div>
+  </div>
+  <!-- header end -->
+  <!-- sidebar start -->
+  <div class="sidebar collapse navbar-collapse" id="collapsibleNavbar">
+    <div class="dashboard-sidebar-menu position-fixed">
+      <div class="emailValidation-menu">
+        <p class="main-menu">Dashboard</p>
+        <p class="menu-child" data-toggle="collapse" data-target="#collapsibleNavbar" 
+        routerLink="/dashboard">Location</p>
+        <p class="menu-child" data-toggle="collapse" data-target="#collapsibleNavbar" 
+        routerLink="/dashboard">
+          Equipment</p>
+          <p class="menu-child" data-toggle="collapse" data-target="#collapsibleNavbar" 
+        routerLink="/dashboard/users">
+          Users</p>
+          <p class="menu-child" data-toggle="collapse" data-target="#collapsibleNavbar" 
+        routerLink="/dashboard/roles">
+          Roles</p>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</section>

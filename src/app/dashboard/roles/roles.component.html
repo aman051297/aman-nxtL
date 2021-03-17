@@ -1,0 +1,43 @@
+<button (click)="openUserForm()" id="myBtn" class="common-btn"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Add Role</button>
+<div *ngFor="let role of roles">
+ <h3> {{role.name}}</h3><span><a title="Update" class="rounded-edit" id="myBtn"><i class="fa fa-edit edit-icon"></i></a><a title="Delete" class="rounded-del" (click)="deleteRole(role.id)">
+            <i class="fa fa-trash"></i></a></span>
+  <div *ngFor="let authority of toArray(role.authorities)">
+    <span>{{authority.name}}</span>
+  </div>
+</div>
+<!-- modal for add role -->
+<div style="position: relative">
+  <div id="newRoleForm" class="modal" #newRoleForm>
+    <div class="modal-content-form">
+      <form class="select_box location_form mb-0 pb-0 border" [formGroup]="createRoleForm" (ngSubmit)="createRole()">
+        <span (click)="closeModal()" #close class="close">&times;</span>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="name" autocomplete="off" name="Name" placeholder="Name">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Authorities</label>
+                <div class="form_btns popup_btn col-12 ">
+                  <button type="submit" class="common-btn" style="position: absolute; right: 460px;margin-top: -45px;">Create</button>
+                </div>
+                <ul>
+                  <li *ngFor="let authority of authoritiesData">
+                    <div class="checkbox_box" title="{{authority.name}}">
+                      <input type="checkbox" selected="true" value="{{authority.id}}" (change)="onChangeAuthorities(authority)">
+                      <span style="font-size: 10px;">{{authority.name}}</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

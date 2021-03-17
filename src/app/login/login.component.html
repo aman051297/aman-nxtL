@@ -1,0 +1,23 @@
+<main>
+  <div class="app">
+    <div class="bg"></div>
+    <form [formGroup]="loginForm">
+      <header>
+        <img src="https://assets.codepen.io/3931482/internal/avatars/users/default.png?format=auto&height=80&version=1592223909&width=80">
+      </header>
+      <div class="inputs">
+        <select class="input-fields" name="select_client" formControlName="select_client">
+          <option value="Select client" disabled="">Select client</option>
+          <option value="Aligarh" selected>Aligarh</option>
+        </select>
+        <input type="text" name="username" autocomplete="off" formControlName="username" placeholder="Username">
+        <input type="password" name="password" autocomplete="off" formControlName="password" placeholder="Password">
+        <p class="light"><a href="#">Forgot password?</a></p>
+      </div>
+    </form>
+    <footer>
+      <button (click)="login()">Login</button>
+      <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </footer>
+  </div>
+</main>

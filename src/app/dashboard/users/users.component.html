@@ -1,0 +1,143 @@
+<button (click)="openUserForm()" id="myBtn" class="common-btn"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; New User</button>
+<div style="overflow-x: auto; overflow-y: hidden;">
+  <table>
+    <thead>
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Role</th>
+        <th>User Activation</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | slice:1; let i = index;">
+        <td>{{i + 1}}</td>
+        <td>
+          {{user.name}}
+        </td>
+        <td>
+          {{user.username}}
+        </td>
+        <td>
+          {{user.email}}
+        </td>
+        <td>
+          {{user.mobileNo}}
+        </td>
+        <td>
+          {{user.roles[0]?.name}}
+        </td>
+        <td>
+          {{user.active}}
+        </td>
+        <td>
+          <a title="Update" class="rounded-edit" (click)="openUpdateUserForm(user)" id="myBtn"><i class="fa fa-edit edit-icon"></i></a>
+          <a title="Delete" class="rounded-del" (click)="deleteUser(user.id)">
+            <i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--    <div class="text-center no-records" *ngIf="noUser">No user found</div> -->
+</div>
+<!-- MODAL -->
+<!-- update user Form -->
+<div style="position: relative">
+  <div id="addUserForm" class="modal" #addUserForm>
+    <div class="modal-content-form">
+      <form class="select_box location_form mb-0 pb-0 border" [formGroup]="createUserForm" (ngSubmit)="createUser()">
+        <span (click)="closeModal()" #close class="close">&times;</span>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="name" autocomplete="off" name="Name" placeholder="Name">
+                &nbsp;&nbsp;&nbsp;<input type="text" class="form-control" name="usernameAdd" formControlName="username" autocomplete="off" placeholder="User name">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <input type="email" class="form-control" formControlName="email" name="email" id="emailId" placeholder="Email">
+                &nbsp;&nbsp;&nbsp; <input type="email" class="form-control" autocomplete="off" formControlName="mobileNo" name="mobileNo" placeholder="Mobile number">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <input type="email" class="form-control" formControlName="contactNo" autocomplete="off" name="contactNo" placeholder="Contact number">
+                 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <button type="submit" class="common-btn">Create</button>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Role</label>
+                
+                  <ul>
+                    <div *ngFor="let role of roles">
+                      <li>
+                        <input type="checkbox" name="rolesSelect" id="roleSelectId" value="{{role.id}}" (change)="onChangeRole(role)"> <span class="rolename">{{role.name}}</span>
+                        <br>
+                      </li>
+                    </div>
+                  </ul>
+                
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- update user Form -->
+<div style="position: relative">
+  <div id="updateUserForm" class="modal" #updateUserForm>
+    <div class="modal-content-form">
+      <form class="select_box location_form mb-0 pb-0 border" [formGroup]="userUpdateForm" (ngSubmit)="updateUser()">
+        <span (click)="closeModalUpdateUser()" #close class="close">&times;</span>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="name" autocomplete="off" name="Name" placeholder="Name">
+                &nbsp;&nbsp;&nbsp;<input type="text" class="form-control" name="usernameAdd" formControlName="username" autocomplete="off" placeholder="User name">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <input type="email" class="form-control" formControlName="email" name="email" id="emailId" placeholder="Email">
+                &nbsp;&nbsp;&nbsp; <input type="email" class="form-control" autocomplete="off" formControlName="mobileNo" name="mobileNo" placeholder="Mobile number">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <input type="email" class="form-control" formControlName="contactNo" autocomplete="off" name="contactNo" placeholder="Contact number">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Role</label>
+                  <ul>
+                    <div *ngFor="let role of roles">
+                      <li *ngIf="role.active" title="{{role.name}}">
+                        <input type="checkbox" name="rolesSelect" id="roleSelectId" value="{{role.id}}" (change)="onChangeRole(role)"> <span class="rolename">{{role.name}}</span>
+                        <br>
+                      </li>
+                    </div>
+                  </ul>
+                
+              </div>
+            </div>
+            <div class="form_btns popup_btn col-12 ">
+              <button type="submit" class="common-btn">update</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
