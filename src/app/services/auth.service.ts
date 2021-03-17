@@ -85,11 +85,15 @@ export class AuthService {
     return this.http.get(this.getAuthoritiesApi);
   }
 
-   newRole(user: any) {
+  newRole(user: any) {
     return this.http.post(this.newRoleApi, user);
   }
 
   deleteRole(userId: any) {
     return this.http.delete(this.updateRoleApi + userId);
+  }
+
+  updateRole(userId: any, user: any) {
+    return this.http.put(this.updateRoleApi + userId, user);
   }
 }
