@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Routes, Router, ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-testing',
-  templateUrl: './testing.component.html',
-  styleUrls: ['./testing.component.css']
+  selector: "app-testing",
+  templateUrl: "./testing.component.html",
+  styleUrls: ["./testing.component.css"],
 })
 export class TestingComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit() {}
 }

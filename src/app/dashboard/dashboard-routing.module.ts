@@ -4,6 +4,7 @@ import { DashboardComponent } from "./dashboard.component";
 import { HomeComponent } from "./home/home.component";
 import { UsersComponent } from './users/users.component';
 import { RolesComponent } from './roles/roles.component';
+import { TestingComponent } from './testing/testing.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,11 @@ const routes: Routes = [
       {
         path: "roles",
         component: RolesComponent,
+        data: { title: "Efcon | Dashboard|users " },
+      },
+      {
+        path: "testing",
+        component: TestingComponent,
         data: { title: "Efcon | Dashboard|users " },
       },
     ],
