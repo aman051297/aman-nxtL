@@ -15,18 +15,26 @@ import {
 })
 export class RolesComponent implements OnInit {
 	@ViewChild("newRoleForm", { static: false }) newRoleForm: ElementRef;
+	@ViewChild("editRoleForm", { static: false }) editRoleForm: ElementRef;
 	selectedAuths: any[] = [];
 	authorities: any;
 	createRoleForm: FormGroup;
+	updateRoleForm: FormGroup;
 	roles: any = [];
 	authoritiesData: any;
 	authorityIds = [];
+	selectedUserId:any;
 
 	constructor(private auth: AuthService, private formBuilder: FormBuilder) {}
 
 	ngOnInit() {
 		this.getRoles();
 		this.createRoleForm = this.formBuilder.group({
+			name: ["", [Validators.required, Validators.maxLength(35)]],
+			authorityIds: ["", [Validators.required]],
+		});
+
+		this.updateRoleForm = this.formBuilder.group({
 			name: ["", [Validators.required, Validators.maxLength(35)]],
 			authorityIds: ["", [Validators.required]],
 		});
@@ -105,4 +113,36 @@ export class RolesComponent implements OnInit {
           }
         );
       }
+      openUpdateRoleForm(role:any){
+		this.editRoleForm.nativeElement.style.display = "block";
+		this.updateRoleForm.controls.name.setValue(role.name);
+		this.getAuthorities();
+		this.selectedUserId = role.id;
+      }
+
+
+	closeupdateRoleModal() {
+		this.editRoleForm.nativeElement.style.display = "none";
+		this.updateRoleForm.reset();
+	}
+
+	updateRole(){
+		this.updateRoleForm.controls["authorityIds"].patchValue(this.authorityIds);
+		if (this.updateRoleForm.invalid) {
+			this.updateRoleForm.controls["name"].markAsTouched();
+			this.updateRoleForm.controls["authorityIds"].markAsTouched();
+		} else {
+			this.auth.updateRole(this.selectedUserId,this.updateRoleForm.value).subscribe(
+				(res: any) => {
+					alert("Role update SuccessFully");
+					this.closeModal();
+					this.getRoles();
+				},
+				(err: any) => {
+					alert(err.error.error);
+				}
+			);
+		}
+
+	}
 }
