@@ -25,7 +25,6 @@ export class DashboardComponent implements OnInit {
 this.auth.getCurrentUser().subscribe(
       (res: any) => {
          this.userDetails = res;
-         console.log(res);
       },
       (err: any) => {
       }
@@ -35,7 +34,6 @@ this.auth.getCurrentUser().subscribe(
   logout(){
     this.auth.logout().subscribe(
       (res: any) => {
-      console.log(res);
       },
       (err: any) => {
       }

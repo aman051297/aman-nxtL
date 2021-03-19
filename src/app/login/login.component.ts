@@ -36,7 +36,7 @@ login(){
   .then(res => res.json())
   .then(res => {
     localStorage.setItem("access_token", res.access_token);
-    console.log(res)
+    // console.log(res)
   })
 this.route.navigate(['/dashboard']);
 }
