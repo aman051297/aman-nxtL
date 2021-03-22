@@ -1,7 +1,17 @@
-.dashboard-img {
-  width: 1080px;
-  height: 575px;
-  position: absolute;
-  left: 262px;
-  cursor: pointer;
+.map-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: 260px;
+    margin-top: 70px;
+}
+
+.map-frame{
+	height: 100%;	
+}
+
+#map{
+	height: 100%;
 }

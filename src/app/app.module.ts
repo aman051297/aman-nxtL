@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { InterceptorService } from "./services/interceptor.service";
-
+import { MapService } from "./services/map.service";
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { InterceptorService } from "./services/interceptor.service";
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
       multi: true,
-    },],
+    },MapService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
