@@ -21,15 +21,14 @@ export class DashboardComponent implements OnInit {
   }
 
   userinfo() {
-    setTimeout(() => {
-      this.auth.getCurrentUser().subscribe(
-        (res: any) => {
-          this.userDetails = res;
-        },
-        (err: any) => {}
-      );
-    }, 1200);
+    this.auth.getCurrentUser().subscribe(
+      (res: any) => {
+        this.userDetails = res;
+      },
+      (err: any) => {}
+    );
   }
+  
   logout() {
     this.auth.logout().subscribe(
       (res: any) => {},
