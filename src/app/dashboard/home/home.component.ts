@@ -1,6 +1,7 @@
 import { Routes, Router, ActivatedRoute } from "@angular/router";
 import { Component, AfterViewInit } from "@angular/core";
 import * as L from "leaflet";
+import "leaflet/dist/images/marker-shadow.png";
 
 
 @Component({
