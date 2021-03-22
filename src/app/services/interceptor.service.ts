@@ -18,28 +18,21 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class InterceptorService implements HttpInterceptor {
   isLoggedIn: boolean = false;
 
-  constructor(
-    private auth: AuthService,
-    private router: Router,
-  ) {}
+  constructor(private auth: AuthService, private router: Router) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    const token = localStorage.getItem("access_token");
     if (req.url.includes(environment.BACKEND_HOST)) {
       req = req.clone({
         setHeaders: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          Authorization: token
+            ? `Bearer ${token}`
+            : `Basic QWxpZ2FyaDpueHRsaWZl`,
         },
       });
-    } 
-    // else {
-    //   req = req.clone({
-    //     setHeaders: {
-    //       Authorization: "Bearer " + this.auth.javaAuthToken,
-    //     },
-    //   });
-    // }
+    }
     return next.handle(req).pipe(
       catchError((err) => {
         if (err instanceof HttpErrorResponse) {
@@ -52,5 +45,4 @@ export class InterceptorService implements HttpInterceptor {
       })
     );
   }
-
 }
