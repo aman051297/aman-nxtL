@@ -44,8 +44,11 @@ export class AuthService {
   //update Role
   readonly updateRoleApi = environment.BACKEND_HOST + "api/role/";
 
-  //logout
+  //get clients
   readonly getClientsApi = environment.BACKEND_HOST + "api/clients";
+
+  //locations
+  readonly getLocationsApi = environment.BACKEND_HOST + "api/locations";
 
   getCurrentUser() {
     return this.http.get(this.currentUser);
@@ -110,5 +113,9 @@ export class AuthService {
         `oauth/token?grant_type=password&username=${user.username}&password=${user.password}`,
       user
     );
+  }
+
+  locations() {
+    return this.http.get(this.getLocationsApi);
   }
 }
