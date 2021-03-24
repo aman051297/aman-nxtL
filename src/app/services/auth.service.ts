@@ -50,6 +50,30 @@ export class AuthService {
   //locations
   readonly getLocationsApi = environment.BACKEND_HOST + "api/locations";
 
+  //Get location1 info
+  readonly getLocations001 =
+    environment.BACKEND_HOST + "api/location/LOCAUPP0001";
+
+  //Get location2 info
+  readonly getLocations002 =
+    environment.BACKEND_HOST + "api/location/LOCAUPP0002";
+
+  //Get location3 info
+  readonly getLocations003 =
+    environment.BACKEND_HOST + "api/location/LOCAUPP0003";
+
+  //Get location4 info
+  readonly getLocations004 =
+    environment.BACKEND_HOST + "api/location/LOCAUPP0004";
+
+  //Get location5 info
+  readonly getLocations005 =
+    environment.BACKEND_HOST + "api/location/LOCAUPP0005";
+
+  //Get location6 info
+  readonly getLocations006 =
+    environment.BACKEND_HOST + "api/location/LOCAUPP0006";
+
   getCurrentUser() {
     return this.http.get(this.currentUser);
   }
@@ -117,5 +141,29 @@ export class AuthService {
 
   locations() {
     return this.http.get(this.getLocationsApi);
+  }
+
+  location0001() {
+    return this.http.get(this.getLocations001);
+  }
+
+  location0002() {
+    return this.http.get(this.getLocations002);
+  }
+
+  location0003() {
+    return this.http.get(this.getLocations003);
+  }
+
+  location0004() {
+    return this.http.get(this.getLocations004);
+  }
+
+  location0005() {
+    return this.http.get(this.getLocations005);
+  }
+
+  location0006() {
+    return this.http.get(this.getLocations006);
   }
 }
