@@ -44,7 +44,7 @@ export class HomeComponent implements AfterViewInit {
 		);
 		var datacentre = L.icon({
 			iconUrl: "assets/images/datacentre.svg",
-			iconSize: [38, 95], // size of the icon
+			iconSize: [50,50], // size of the icon
 			iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
 			shadowAnchor: [4, 62], // the same for the shadow
 			popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
@@ -52,7 +52,7 @@ export class HomeComponent implements AfterViewInit {
 		var Junction = L.icon({
 			iconUrl: "assets/images/junction.svg",
 
-			iconSize: [38, 95], // size of the icon
+			iconSize: [50,50], // size of the icon
 			iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
 			shadowAnchor: [4, 62], // the same for the shadow
 			popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
@@ -61,7 +61,7 @@ export class HomeComponent implements AfterViewInit {
 		var Highway = L.icon({
 			iconUrl: "assets/images/highway.svg",
 
-			iconSize: [38, 95], // size of the icon
+			iconSize: [50,50], // size of the icon
 			iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
 			shadowAnchor: [4, 62], // the same for the shadow
 			popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
@@ -70,7 +70,7 @@ export class HomeComponent implements AfterViewInit {
 		var Control_room = L.icon({
 			iconUrl: "assets/images/control_room.svg",
 
-			iconSize: [38, 95], // size of the icon
+			iconSize: [50,50], // size of the icon
 			iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
 			shadowAnchor: [4, 62], // the same for the shadow
 			popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
